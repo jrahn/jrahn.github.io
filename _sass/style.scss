@@ -11,11 +11,21 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #ffffff;
+}
+
+body, a {
+  color: #fff;
+}
+
+a:hover, a:active {
+  opacity: 0.6;
 }
 
 h1, h2 {
   font-weight: 100;
+  a {
+    text-decoration: none;
+  }
 }
 
 h1 {
@@ -56,10 +66,6 @@ strong {
   height: 30px;
   cursor: pointer;
   text-indent: -9999px;
-
-  &:hover {
-    opacity:0.6;
-  }
 }
 
 .social-xing {
