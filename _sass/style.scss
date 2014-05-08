@@ -4,6 +4,7 @@
 
 $phone-breakpoint: 320px;
 $tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
 
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
@@ -13,7 +14,10 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  @media (min-width: $desktop-breakpoint) {
+    font-size: 16px;
+  }
 }
 
 body, a {
@@ -34,14 +38,14 @@ h1, h2 {
 h1 {
   font-size: 60px;
   @media (max-width: $phone-breakpoint) {
-    font-size: 46px;
+    font-size: 40px;
   }
 }
 
 h2 {
   font-size: 25px;
   @media (max-width: $phone-breakpoint) {
-    font-size: 20px;
+    font-size: 18px;
   }
   strong {
     font-weight: 400;
@@ -50,7 +54,7 @@ h2 {
 
 h3 {
   margin: 20px 0;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 strong {
@@ -58,9 +62,12 @@ strong {
 }
 
 .content {
-  margin-top: 130px;
   width: 100%;
   text-align: center;
+  margin-top: 50px;
+  @media (min-width: $desktop-breakpoint) {
+    margin-top: 130px;
+  }
 }
 
 .social-buttons {
@@ -110,7 +117,6 @@ strong {
 }
 
 .projects a {
-  font-size: 18px;
   text-decoration: none;
   display: block;
   padding: 20px 10px;

@@ -65,7 +65,12 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 body, a {
@@ -88,7 +93,7 @@ h1 {
 }
 @media (max-width: 320px) {
   h1 {
-    font-size: 46px;
+    font-size: 40px;
   }
 }
 
@@ -97,7 +102,7 @@ h2 {
 }
 @media (max-width: 320px) {
   h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 h2 strong {
@@ -106,7 +111,7 @@ h2 strong {
 
 h3 {
   margin: 20px 0;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 strong {
@@ -114,9 +119,14 @@ strong {
 }
 
 .content {
-  margin-top: 130px;
   width: 100%;
   text-align: center;
+  margin-top: 50px;
+}
+@media (min-width: 1024px) {
+  .content {
+    margin-top: 130px;
+  }
 }
 
 .social-buttons {
@@ -180,7 +190,6 @@ strong {
 }
 
 .projects a {
-  font-size: 18px;
   text-decoration: none;
   display: block;
   padding: 20px 10px;
