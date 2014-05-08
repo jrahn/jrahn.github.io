@@ -6,6 +6,8 @@ $phone-breakpoint: 320px;
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1024px;
 
+$blur-color: rgba(#fff, 0.2);
+
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
   @include background-size(cover);
@@ -89,14 +91,14 @@ strong {
 }
 
 .projects {
-  border-top: 1px solid rgba(#fff, 0.3);
-  border-bottom: 1px solid rgba(#fff, 0.3);
+  border-top: 1px solid $blur-color;
+  border-bottom: 1px solid $blur-color;
   margin: auto;
 
   @media (min-width: $tablet-breakpoint + 1) {
     @include border-radius(2px);
-    border: 1px solid rgba(#fff, 0.3);
     display: inline-block;
+    border: 1px solid $blur-color;
 
     a:first-child {
       @include border-radius(2px 2px 0 0);
@@ -108,7 +110,7 @@ strong {
 }
 
 .projects li {
-  border-bottom: 1px solid rgba(#fff, 0.3);
+  border-bottom: 1px solid $blur-color;
   &:last-child {
     border-bottom: 0;
   }
@@ -119,7 +121,7 @@ strong {
   display: block;
   padding: 20px 40px;
   &:hover {
-    background: rgba(#fff, 0.3);
+    background-color: $blur-color;
     color: #fff;
     opacity: 1;
     color: #151946;
