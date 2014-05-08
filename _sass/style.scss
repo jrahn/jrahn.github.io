@@ -1,6 +1,8 @@
 @import "compass/reset";
 @import "compass/css3/background-size";
 
+$phone-breakpoint: 320px;
+
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
   @include background-size(cover);
@@ -18,10 +20,16 @@ h1, h2 {
 
 h1 {
   font-size: 60px;
+  @media (max-width: $phone-breakpoint) {
+    font-size: 46px;
+  }
 }
 
 h2 {
   font-size: 25px;
+  @media (max-width: $phone-breakpoint) {
+    font-size: 20px;
+  }
   strong {
     font-weight: 400;
   }
