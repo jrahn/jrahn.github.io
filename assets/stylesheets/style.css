@@ -65,6 +65,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 body, a {
@@ -103,6 +104,11 @@ h2 strong {
   font-weight: 400;
 }
 
+h3 {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
 strong {
   font-weight: 500;
 }
@@ -133,4 +139,52 @@ strong {
   background-image: url(../images/xing.png);
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.projects {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: auto;
+}
+@media (min-width: 769px) {
+  .projects {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .projects a:first-child {
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    -ms-border-radius: 2px 2px 0 0;
+    -o-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+  }
+  .projects a:last-child {
+    -webkit-border-radius: 0 0 2px 2px;
+    -moz-border-radius: 0 0 2px 2px;
+    -ms-border-radius: 0 0 2px 2px;
+    -o-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+  }
+}
+
+.projects a {
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.projects a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  opacity: 1;
+  color: #403c72;
+}
+.projects a:last-child {
+  border-bottom: 0;
 }

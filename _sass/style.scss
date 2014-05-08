@@ -1,7 +1,9 @@
 @import "compass/reset";
 @import "compass/css3/background-size";
+@import "compass/css3/border-radius";
 
 $phone-breakpoint: 320px;
+$tablet-breakpoint: 768px;
 
 html {
   background: url(../images/bg.jpg) no-repeat center center fixed;
@@ -11,6 +13,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 body, a {
@@ -45,6 +48,11 @@ h2 {
   }
 }
 
+h3 {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
 strong {
   font-weight: 500;
 }
@@ -73,4 +81,40 @@ strong {
   background-image: url(../images/xing.png);
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.projects {
+  border-top: 1px solid rgba(#fff, 0.3);
+  border-bottom: 1px solid rgba(#fff, 0.3);
+  margin: auto;
+
+  @media (min-width: $tablet-breakpoint + 1) {
+    @include border-radius(2px);
+    width: 400px;
+    border: 1px solid rgba(#fff, 0.3);
+
+    a:first-child {
+      @include border-radius(2px 2px 0 0);
+    }
+    a:last-child {
+      @include border-radius(0 0 2px 2px);
+    }
+  }
+}
+
+.projects a {
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(#fff, 0.3);
+  &:hover {
+    background: rgba(#fff, 0.3);
+    color: #fff;
+    opacity: 1;
+    color: #403c72;
+  }
+  &:last-child {
+    border-bottom: 0;
+  }
 }
