@@ -95,8 +95,8 @@ strong {
 
   @media (min-width: $tablet-breakpoint + 1) {
     @include border-radius(2px);
-    width: 400px;
     border: 1px solid rgba(#fff, 0.3);
+    display: inline-block;
 
     a:first-child {
       @include border-radius(2px 2px 0 0);
@@ -117,7 +117,7 @@ strong {
 .projects a {
   text-decoration: none;
   display: block;
-  padding: 20px 10px;
+  padding: 20px 40px;
   &:hover {
     background: rgba(#fff, 0.3);
     color: #fff;
