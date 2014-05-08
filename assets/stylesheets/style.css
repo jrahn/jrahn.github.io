@@ -172,19 +172,22 @@ strong {
   }
 }
 
+.projects li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.projects li:last-child {
+  border-bottom: 0;
+}
+
 .projects a {
   font-size: 18px;
   text-decoration: none;
   display: block;
   padding: 20px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .projects a:hover {
   background: rgba(255, 255, 255, 0.3);
   color: #fff;
   opacity: 1;
   color: #403c72;
-}
-.projects a:last-child {
-  border-bottom: 0;
 }

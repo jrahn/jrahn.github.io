@@ -102,19 +102,22 @@ strong {
   }
 }
 
+.projects li {
+  border-bottom: 1px solid rgba(#fff, 0.3);
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
 .projects a {
   font-size: 18px;
   text-decoration: none;
   display: block;
   padding: 20px 10px;
-  border-bottom: 1px solid rgba(#fff, 0.3);
   &:hover {
     background: rgba(#fff, 0.3);
     color: #fff;
     opacity: 1;
     color: #403c72;
-  }
-  &:last-child {
-    border-bottom: 0;
   }
 }
