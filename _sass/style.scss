@@ -15,8 +15,10 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  margin: 50px auto;
   @media (min-width: $desktop-breakpoint) {
     font-size: 16px;
+    margin: 130px auto;
   }
 }
 
@@ -64,10 +66,6 @@ strong {
 .content {
   width: 100%;
   text-align: center;
-  margin-top: 50px;
-  @media (min-width: $desktop-breakpoint) {
-    margin-top: 130px;
-  }
 }
 
 .social-buttons {
