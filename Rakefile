@@ -8,3 +8,10 @@ desc "Start compass watcher to render SASS"
 task :watch_sass do
   system "compass watch"
 end
+
+task :deploy do
+  puts "=== Running Compass"
+  system 'compass compile -e production'
+  puts "=== Pushing Changes"
+  system 'git push'
+end
