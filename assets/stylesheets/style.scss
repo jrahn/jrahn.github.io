@@ -1,0 +1,157 @@
+---
+---
+
+@import 'reset';
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'utils';
+
+$body-margin: 20px;
+
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width 768px 8);
+$desktop: new-breakpoint(min-width 769px 12);
+
+html {
+  @include linear-gradient(111deg, #ff5f84, #ffb848);
+}
+
+body {
+  padding: 100px $body-margin;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  color: #fff;
+  strong {
+    @extend .strong;
+  }
+}
+
+h1 {
+  letter-spacing: 0;
+  font-size: 70px;
+  font-weight: 900;
+}
+
+header {
+  h1, h2 {
+    margin: 0;
+    line-height: 100%;
+    color: #fff;
+    strong {
+      @extend .strong;
+    }
+  }
+  h2 {
+    margin: 30px 0;
+  }
+}
+
+hr {
+  background-color: #000;
+  border: none;
+  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.lead {
+  color: #fff;
+  margin: 50px 0;
+  strong {
+    @extend .strong;
+  }
+}
+
+.portfolio {
+  overflow: auto;
+  margin-left: -$body-margin;
+  margin-right: -$body-margin;
+  padding: 0;
+  li {
+    overflow: auto;
+    color: #ff677b;
+    &.active {
+      background-color: #fff;
+      .content-wrapper {
+        display: block;
+      }
+    }
+  }
+  .content-wrapper {
+    padding: $body-margin;
+    color: #000;
+    display: none;
+  }
+}
+
+.blackbox {
+  display: block;
+  margin: $body-margin;
+  vertical-align: middle;
+  // height: 14vw;
+  // width: 14vw;
+  background-color: #000;
+  color: #ff7178;
+  text-align: center;
+  letter-spacing: 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 70px 0;
+}
+
+.active .blackbox {
+  margin-bottom: 0;
+}
+
+.facts-n-figures {
+  @include outer-container;
+  .row {
+    @include row;
+    margin: 30px 0;
+    .figure {
+      @include span-columns(6);
+      font-family: 'Lato';
+      text-align: right;
+      white-space: nowrap;
+      font-size: 40px;
+      border-right: 1px solid #000;
+      padding-right: 10px;
+      line-height: 36px;
+    }
+    .fact {
+      @include span-columns(6);
+      color: #fff;
+      font-weight: 300;
+    }
+  }
+}
+
+.me {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  left: -50px;
+}
+
+.project-date {
+  display: block;
+}
+
+.project {
+  header h4 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  a {
+    color: #ff5f84;
+  }
+}

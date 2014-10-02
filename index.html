@@ -5,20 +5,122 @@
   <meta name="viewport" content="width=device-width">
   <title>Jennifer Rahn</title>
   <link href="assets/stylesheets/style.css" rel="stylesheet" type="text/css" />
-  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:900|Roboto+Slab:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="content">
-    <h1><strong>Jennifer</strong> Rahn</h1>
-    <h2><strong>Schreib' mir:</strong> <a href="mailto:mail@jrahn.de">mail@jrahn.de</a></h2>
-    <p class="social-buttons"><a href="http://www.xing.com/profile/Jennifer_Rahn5" class="social-xing">Xing</a></p>
 
-    <h3>Projekte</h3>
-    <ul class="projects">
-      <li><a href="https://www.wahl-o-mat.de">Wahl-O-Mat</a></li>
-      <li><a href="http://www.cocktailiciousapp.com">Cocktailicious</a></li>
-      <li><a href="http://www.diejungeakademie.de/">Die Junge Akademie</a></li>
-    </ul>
+  <header>
+    <h1><strong>Jennifer</strong> Rahn</h1>
+    <h2><strong>Gestalterin</strong> für Medien</h2>
+  </header>
+
+  <p class="lead">Ich bin gerne <strong>kreativ</strong>. Oft auch ungestüm, überdacht und überaus eifrig. Feuer und Flamme, gedankenversunken genial, still organisiert. Kuntergrau und dunkelbunt. Ich konzipiere und gestalte. Web App Print Illustration</p>
+
+  <hr />
+
+  <ul class="portfolio">
+    <li>
+      <a class="blackbox js-portfolio-trigger" href="portfolio/wahl-o-mat.html">WAHL-O-MAT</a>
+      <div class="content-wrapper js-wrapper">
+        <p>Lädt...</p>
+      </div>
+    </li>
+    <li>
+      <a class="blackbox js-portfolio-trigger" href="portfolio/web.html">WEB</a>
+      <div class="content-wrapper js-wrapper">
+        <p>Lädt...</p>
+      </div>
+    </li>
+    <li>
+      <a class="blackbox js-portfolio-trigger" href="portfolio/app.html">APP</a>
+      <div class="content-wrapper js-wrapper">
+        <p>Lädt...</p>
+      </div>
+    </li>
+    <li>
+      <a class="blackbox js-portfolio-trigger" href="portfolio/print.html">PRINT</a>
+      <div class="content-wrapper js-wrapper">
+        <p>Lädt...</p>
+      </div>
+    </li>
+    <li>
+      <a class="blackbox js-portfolio-trigger" href="portfolio/etc.html">ETC</a>
+      <div class="content-wrapper js-wrapper">
+        <p>Lädt...</p>
+      </div>
+    </li>
+  </ul>
+
+  <hr />
+
+  <h3><strong>Zahlen</strong> und Fakten</h3>
+  <div class="clear"></div>
+
+  <img src="assets/images/me.jpg" class="img-circle me"/>
+
+  <div class="facts-n-figures">
+    <div class="row">
+      <div class="figure">28</div>
+      <div class="fact">Geburtstage bis heute</div>
+    </div>
+    <div class="row">
+      <div class="figure">5</div>
+      <div class="fact">Jahre Agenturerfahung</div>
+    </div>
+    <div class="row">
+      <div class="figure">3-6</div>
+      <div class="fact">Tassen Kaffee am Tag</div>
+    </div>
+    <div class="row">
+      <div class="figure">2</div>
+      <div class="fact">Jahre Ausbildung</div>
+    </div>
+    <div class="row">
+      <div class="figure">23</div>
+      <div class="fact">mal hintereinander der selbe Song, wenn er mir gefällt</div>
+    </div>
   </div>
+
+  <hr />
+
+  <h3><strong>Skills</strong></h3>
+
+  <p>Sehr gute Kenntnisse der Adobe CS6</p>
+
+  <p>Kenntnisse in HTML, CSS, CMS, WordPress, PHP, JavaScript</p>
+
+  <p>Deutsch: Muttersprache<br>Englisch: sehr gute Kenntnisse</p>
+
+  <p>Führerschein Klasse B</p>
+
+  <hr>
+
+  <p class="kontakt">Post an mich: <strong>mail@jrahn.de</strong></p>
+  <p class="rechts"><a href="http://www.xing.com/profile/Jennifer_Rahn5" target="_blank"><i class="icon-xing"></i></a> · Impressum · 2014</p>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript">
+  (function($) {
+
+    var preventDefaultEvent = function(cb) {
+      return function(e) {
+        e.preventDefault();
+        cb.call(this, e);
+      }
+    };
+
+    var openPortfolio = function(e) {
+      $(this).parents('li').addClass('active').find('.js-wrapper').load(this.href + ' #ajax-container');
+    };
+
+    var closePortfolio = function(e) {
+      $(this).parents('li').removeClass('active');
+    };
+
+    $(document).on('click', '.js-portfolio-trigger', preventDefaultEvent(openPortfolio));
+    $(document).on('click', '.js-close-portfolio', preventDefaultEvent(closePortfolio));
+
+  })(jQuery);
+  </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+@mixin border-radius($r) {
+  @include border-top-radius($r);
+  @include border-right-radius($r);
+  @include border-bottom-radius($r);
+  @include border-left-radius($r);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-circle {
+  @include border-radius(50%);
+}
+
+.strong {
+  color: #000;
+}
+
+@mixin icon($size, $img) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background: url("../images/" + $img) no-repeat;
+  background-size: $size $size;
+}
+
+.icon-xing {
+  @include icon(16px, "xing.png");
+}
