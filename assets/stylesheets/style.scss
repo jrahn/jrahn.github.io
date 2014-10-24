@@ -1,16 +1,16 @@
 ---
 ---
 
+$body-margin: 20px;
+$max-width: 1000px;
+
 @import 'reset';
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 @import 'utils';
 
-$body-margin: 20px;
-
-$mobile: new-breakpoint(max-width 480px 4);
-$tablet: new-breakpoint(max-width 768px 8);
-$desktop: new-breakpoint(min-width 769px 12);
+$tablet: new-breakpoint(min-width 768px 8);
+$desktop: new-breakpoint(min-width 1025px 12);
 
 html {
   @include linear-gradient(111deg, #ff5f84, #ffb848);
@@ -20,6 +20,10 @@ body {
   padding: 100px $body-margin;
   font-family: 'Roboto Slab';
   font-weight: 300;
+  font-size: 26px;
+  @include media($tablet) {
+    @include outer-container;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,6 +74,7 @@ hr {
 }
 
 .portfolio {
+  position: relative;
   overflow: auto;
   margin-left: -$body-margin;
   margin-right: -$body-margin;
@@ -82,6 +87,11 @@ hr {
       .content-wrapper {
         display: block;
       }
+    }
+    @include media($tablet) {
+      height: 7.125em;
+      width: 7.125em;
+      float: left;
     }
   }
   .content-wrapper {
@@ -113,6 +123,7 @@ hr {
 
 .facts-n-figures {
   @include outer-container;
+  overflow: hidden;
   .row {
     @include row;
     margin: 30px 0;
@@ -153,5 +164,32 @@ hr {
 
   a {
     color: #ff5f84;
+  }
+}
+
+footer {
+  color: white;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.hidden-desktop {
+  @include media($desktop) {
+    display: none;
+  }
+}
+
+.visible-desktop {
+  display: none;
+  @include media($desktop) {
+    display: block;
+  }
+}
+
+.pull-right {
+  @include media($desktop) {
+    float: right;
   }
 }
