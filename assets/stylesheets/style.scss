@@ -3,6 +3,7 @@
 
 $body-margin: 20px;
 $max-width: 1000px;
+$highlight: #ff7178;
 
 @import 'reset';
 @import 'bourbon/bourbon';
@@ -10,7 +11,7 @@ $max-width: 1000px;
 @import 'utils';
 
 $tablet: new-breakpoint(min-width 768px 8);
-$desktop: new-breakpoint(min-width 1025px 12);
+$desktop: new-breakpoint(min-width 1000px 12);
 
 html {
   @include linear-gradient(111deg, #ff5f84, #ffb848);
@@ -76,9 +77,14 @@ hr {
 .portfolio {
   position: relative;
   overflow: auto;
-  margin-left: -$body-margin;
-  margin-right: -$body-margin;
-  padding: 0;
+  ul { padding: 0; }
+  .content-wrapper {
+    display: none;
+    color: #000;
+    @include media($tablet) {
+      display: none !important;
+    }
+  }
   li {
     overflow: auto;
     color: #ff677b;
@@ -86,30 +92,83 @@ hr {
       background-color: #fff;
       .content-wrapper {
         display: block;
+        @include media($tablet) { display: none; }
       }
     }
-    @include media($tablet) {
-      height: 7.125em;
-      width: 7.125em;
-      float: left;
+    &:last-child {
+      @include omega;
     }
   }
-  .content-wrapper {
-    padding: $body-margin;
-    color: #000;
-    display: none;
+}
+
+.portfolio {
+  width: 100%;
+
+  ul {
+    @include media($tablet) {
+      display: table;
+      width: 100%;
+    }
   }
+
+  li {
+    padding: 20px;
+
+    @include media($tablet) {
+      display: table-cell;
+      padding-right: 10px;
+      padding-left: 10px;
+      &:first-child {
+        padding: 0;
+        padding-right: 10px;
+      }
+      &:last-child {
+        padding: 0;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+.portfolio-wrapper {
+  position: relative;
+  z-index: 100;
+  margin: -20px;
+  @include media($tablet) {
+    margin: 0;
+  }
+}
+
+.portfolio-details {
+  z-index: 100;
+  display: none;
+}
+
+.portfolio-details-visible {
+  @include media($tablet) {
+    display: block;
+  }
+}
+
+.quicknav {
+  @extend .visible-tablet;
+  @extend .text-center;
+  margin: 60px 0;
+}
+
+.quicknav-close {
+  display: none;
 }
 
 .blackbox {
   display: block;
-  margin: $body-margin;
   vertical-align: middle;
   // height: 14vw;
   // width: 14vw;
   background-color: #000;
-  color: #ff7178;
+  color: $highlight;
   text-align: center;
+  text-decoration: none;
   letter-spacing: 0;
   font-family: 'Lato', sans-serif;
   font-size: 24px;
@@ -119,6 +178,7 @@ hr {
 
 .active .blackbox {
   margin-bottom: 0;
+  color: #fff;
 }
 
 .facts-n-figures {
@@ -128,7 +188,7 @@ hr {
     @include row;
     margin: 30px 0;
     .figure {
-      @include span-columns(6);
+      @include span-columns(3);
       font-family: 'Lato';
       text-align: right;
       white-space: nowrap;
@@ -138,7 +198,7 @@ hr {
       line-height: 36px;
     }
     .fact {
-      @include span-columns(6);
+      @include span-columns(9);
       color: #fff;
       font-weight: 300;
     }
@@ -175,6 +235,17 @@ footer {
   }
 }
 
+.cover {
+  position:fixed; 
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  background-color: white;
+  z-index: 10;
+  display: none;
+}
+
 .hidden-desktop {
   @include media($desktop) {
     display: none;
@@ -184,6 +255,19 @@ footer {
 .visible-desktop {
   display: none;
   @include media($desktop) {
+    display: block;
+  }
+}
+
+.hidden-tablet {
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+.visible-tablet {
+  display: none;
+  @include media($tablet) {
     display: block;
   }
 }
